@@ -9,12 +9,13 @@
   <title>JointJs | 玲 Ling</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="官网JointJs教程，推荐入门模板JointJs流程图 JointJs StartChange style12345678910111213141516171819202122//坐标position: &amp;#123;	x: x,	y: y&amp;#125;, //大小size: &amp;#123;	width: 140,	height: 100&amp;#125;, //添加链接markup: &apos;&amp;lt;a&amp;gt;">
+<meta name="keywords" content="JointJs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JointJs">
 <meta property="og:url" content="http://yoursite.com/2018/01/25/hello-world/index.html">
 <meta property="og:site_name" content="玲 Ling">
 <meta property="og:description" content="官网JointJs教程，推荐入门模板JointJs流程图 JointJs StartChange style12345678910111213141516171819202122//坐标position: &amp;#123;	x: x,	y: y&amp;#125;, //大小size: &amp;#123;	width: 140,	height: 100&amp;#125;, //添加链接markup: &apos;&amp;lt;a&amp;gt;">
-<meta property="og:updated_time" content="2018-02-07T02:49:18.385Z">
+<meta property="og:updated_time" content="2018-02-07T09:31:13.675Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JointJs">
 <meta name="twitter:description" content="官网JointJs教程，推荐入门模板JointJs流程图 JointJs StartChange style12345678910111213141516171819202122//坐标position: &amp;#123;	x: x,	y: y&amp;#125;, //大小size: &amp;#123;	width: 140,	height: 100&amp;#125;, //添加链接markup: &apos;&amp;lt;a&amp;gt;">
@@ -179,7 +180,8 @@
 <h3 id="Close-drag"><a href="#Close-drag" class="headerlink" title="Close drag"></a>Close drag</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var ElementView = joint.dia.ElementView.extend(&#123;</span><br><span class="line">	pointerdown: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">		<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;,</span><br><span class="line">	pointermove: <span class="keyword">function</span>(evt, x, y) &#123;</span><br><span class="line">		<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;,</span><br><span class="line">	pointerup: <span class="keyword">function</span>(evt, x, y) &#123;</span><br><span class="line">		<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h3 id="Close-all-events"><a href="#Close-all-events" class="headerlink" title="Close all events"></a>Close all events</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">paper.<span class="variable">$el</span>.css(<span class="string">'pointer-events'</span>, <span class="string">'none'</span>)</span><br></pre></td></tr></table></figure>
 <h3 id="Zoom"><a href="#Zoom" class="headerlink" title="Zoom"></a>Zoom</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">paper.scale(1);</span><br></pre></td></tr></table></figure>
-
+<h3 id="Recursion"><a href="#Recursion" class="headerlink" title="Recursion"></a>Recursion</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">$.getJSON(<span class="string">"data.json"</span>, <span class="keyword">function</span>(result) &#123;</span><br><span class="line">	var sum = 50,aum = 1;</span><br><span class="line">	$.each(result, <span class="keyword">function</span>(i, item) &#123;</span><br><span class="line">		var texti = result[i].nodehtml;</span><br><span class="line">		var linkviewi=result[i].linkview;</span><br><span class="line">		var backgroundColor = result[i].style;</span><br><span class="line">		var state1 = state(sum, 140 * aum, <span class="string">"rect"</span>, backgroundColor, <span class="string">"#B1E1EB"</span>, texti, linkviewi);</span><br><span class="line">		each(result[i], state1);</span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="keyword">function</span> each(data, state1) &#123;</span><br><span class="line">		<span class="keyword">if</span> (data == null || data.childnode == null) &#123;</span><br><span class="line">			<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			$.each(data.childnode, <span class="keyword">function</span>(i, item) &#123;</span><br><span class="line">				aum = data.childnode[i].code;</span><br><span class="line">				<span class="keyword">if</span> (i &gt; 0) &#123;</span><br><span class="line">					sum = sum + 160;</span><br><span class="line">				&#125;</span><br><span class="line">				var texti = data.childnode[i].nodehtml;</span><br><span class="line">				var linkviewi=data.childnode[i].linkview;</span><br><span class="line">				var backgroundColor = data.childnode[i].style;</span><br><span class="line">				var state2 = state(sum, 140 * aum, <span class="string">"rect"</span>, backgroundColor, <span class="string">"#B1E1EB"</span>, texti, linkviewi);</span><br><span class="line">				link(state1, state2, <span class="string">""</span>);</span><br><span class="line">				<span class="keyword">if</span> (data.childnode[i].childnode != null) &#123;</span><br><span class="line">					state1 = state2;</span><br><span class="line">					each(data.childnode[i], state1);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="Update-Blog"><a href="#Update-Blog" class="headerlink" title="Update Blog"></a>Update Blog</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo d -g</span><br><span class="line">hexo s</span><br><span class="line">hexo new 文件名</span><br></pre></td></tr></table></figure>
       
 
       
@@ -218,6 +220,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JointJs</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -280,6 +293,20 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2018/02/07/Velocity/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Velocity
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -398,6 +425,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JointJs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Velocity</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
