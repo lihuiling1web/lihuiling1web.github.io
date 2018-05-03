@@ -6,22 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>PC端全屏页面 | 玲 Ling</title>
+  <title>setInterval()和setTimeout本质区别 | 玲 Ling</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简单页面1. 页面内容定最小显示宽度（例：1200px且浏览器都有放大功能）居中显示1234567891011121314html,body&amp;#123;	width: 100%;	min-width: 1200px;&amp;#125;.page_content&amp;#123;/*所有内容都放这个盒子里面*/	width: 1200px;	margin: 0 auto;	height: 768px;	back">
-<meta name="keywords" content="PC端全屏页面">
+  <meta name="description" content="setInterval()123456789setInterval(function()&amp;#123;	run();	&amp;#125;,10000);//或者setInt=setInterval(run,10000);window.clearInterval(setInt);//或者window.clearInterval(&quot;run()&quot;,5000); 1.如果run（）的执行时间大于10s，那么甚至可">
+<meta name="keywords" content="setInterval()和setTimeout本质区别">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PC端全屏页面">
-<meta property="og:url" content="http://yoursite.com/2018/05/02/pingmushipei/index.html">
+<meta property="og:title" content="setInterval()和setTimeout本质区别">
+<meta property="og:url" content="http://yoursite.com/2018/05/03/Timer/index.html">
 <meta property="og:site_name" content="玲 Ling">
-<meta property="og:description" content="简单页面1. 页面内容定最小显示宽度（例：1200px且浏览器都有放大功能）居中显示1234567891011121314html,body&amp;#123;	width: 100%;	min-width: 1200px;&amp;#125;.page_content&amp;#123;/*所有内容都放这个盒子里面*/	width: 1200px;	margin: 0 auto;	height: 768px;	back">
-<meta property="og:image" content="http://yoursite.com/assets/blogImg/work/bg_one.png">
-<meta property="og:image" content="http://yoursite.com/assets/blogImg/work/bg_two.png">
-<meta property="og:updated_time" content="2018-05-02T09:23:37.538Z">
+<meta property="og:description" content="setInterval()123456789setInterval(function()&amp;#123;	run();	&amp;#125;,10000);//或者setInt=setInterval(run,10000);window.clearInterval(setInt);//或者window.clearInterval(&quot;run()&quot;,5000); 1.如果run（）的执行时间大于10s，那么甚至可">
+<meta property="og:updated_time" content="2018-05-03T06:26:21.785Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PC端全屏页面">
-<meta name="twitter:description" content="简单页面1. 页面内容定最小显示宽度（例：1200px且浏览器都有放大功能）居中显示1234567891011121314html,body&amp;#123;	width: 100%;	min-width: 1200px;&amp;#125;.page_content&amp;#123;/*所有内容都放这个盒子里面*/	width: 1200px;	margin: 0 auto;	height: 768px;	back">
-<meta name="twitter:image" content="http://yoursite.com/assets/blogImg/work/bg_one.png">
+<meta name="twitter:title" content="setInterval()和setTimeout本质区别">
+<meta name="twitter:description" content="setInterval()123456789setInterval(function()&amp;#123;	run();	&amp;#125;,10000);//或者setInt=setInterval(run,10000);window.clearInterval(setInt);//或者window.clearInterval(&quot;run()&quot;,5000); 1.如果run（）的执行时间大于10s，那么甚至可">
   
     <link rel="alternative" href="/atom.xml" title="玲 Ling" type="application/atom+xml">
   
@@ -157,31 +154,38 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-pingmushipei" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Timer" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      PC端全屏页面
+      setInterval()和setTimeout本质区别
     </h1>
   
 
         
-        <a href="/2018/05/02/pingmushipei/" class="archive-article-date">
-  	<time datetime="2018-05-02T05:44:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-02</time>
+        <a href="/2018/05/03/Timer/" class="archive-article-date">
+  	<time datetime="2018-05-03T02:14:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="简单页面"><a href="#简单页面" class="headerlink" title="简单页面"></a>简单页面</h3><h4 id="1-页面内容定最小显示宽度（例：1200px且浏览器都有放大功能）居中显示"><a href="#1-页面内容定最小显示宽度（例：1200px且浏览器都有放大功能）居中显示" class="headerlink" title="1. 页面内容定最小显示宽度（例：1200px且浏览器都有放大功能）居中显示"></a>1. 页面内容定最小显示宽度（例：1200px且浏览器都有放大功能）居中显示</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">html,body&#123;</span><br><span class="line">	width: 100%;</span><br><span class="line">	min-width: 1200px;</span><br><span class="line">&#125;</span><br><span class="line">.page_content&#123;/*所有内容都放这个盒子里面*/</span><br><span class="line">	width: 1200px;</span><br><span class="line">	margin: 0 auto;</span><br><span class="line">	height: 768px;</span><br><span class="line">	background: red;</span><br><span class="line">&#125;</span><br><span class="line">img&#123;</span><br><span class="line">	width：100%;</span><br><span class="line">	height：auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/assets/blogImg/work/bg_one.png" alt="alt text" title="上述效果图展示"></p>
-<h4 id="2-页面全屏显示，所有内容宽度用百分比-高度rem-媒体查询"><a href="#2-页面全屏显示，所有内容宽度用百分比-高度rem-媒体查询" class="headerlink" title="2. 页面全屏显示，所有内容宽度用百分比+高度rem+媒体查询"></a>2. 页面全屏显示，所有内容宽度用百分比+高度rem+媒体查询</h4><h4 id="（因为pc绝大部分都是宽屏设备，而且他们的比例是不一致的，所以暂时不能适配所有PC终端，尝试通过js判断最小高度临界值，再加上这个最小临界值的class）"><a href="#（因为pc绝大部分都是宽屏设备，而且他们的比例是不一致的，所以暂时不能适配所有PC终端，尝试通过js判断最小高度临界值，再加上这个最小临界值的class）" class="headerlink" title="（因为pc绝大部分都是宽屏设备，而且他们的比例是不一致的，所以暂时不能适配所有PC终端，尝试通过js判断最小高度临界值，再加上这个最小临界值的class）"></a>（因为pc绝大部分都是宽屏设备，而且他们的比例是不一致的，所以暂时不能适配所有PC终端，尝试通过js判断最小高度临界值，再加上这个最小临界值的class）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">html,body&#123;</span><br><span class="line">	width: 100%;</span><br><span class="line">	min-width: 1200px;</span><br><span class="line">	overflow-x: hidden;</span><br><span class="line">&#125;</span><br><span class="line">.page_content&#123;/*所有内容都放这个盒子里面*/</span><br><span class="line">	width: 100%;</span><br><span class="line">	margin: 0 auto;</span><br><span class="line">	background: black;</span><br><span class="line">	height:19.2rem;</span><br><span class="line">	overflow: hidden;</span><br><span class="line">&#125;</span><br><span class="line">.page_top&#123;</span><br><span class="line">	width: 90%;</span><br><span class="line">	margin: 5% auto;</span><br><span class="line">	height: 25%;</span><br><span class="line">	background: yellow;</span><br><span class="line">&#125;</span><br><span class="line">.page_left&#123;</span><br><span class="line">	<span class="built_in">float</span>: left;</span><br><span class="line">	width:25%;</span><br><span class="line">	background: red;</span><br><span class="line">	height:30%;</span><br><span class="line">	margin-left: 5%;</span><br><span class="line">&#125;</span><br><span class="line">.page_right&#123;</span><br><span class="line">	<span class="built_in">float</span>: right;</span><br><span class="line">	width: 60%;</span><br><span class="line">	background:blue ;</span><br><span class="line">	height:30%;</span><br><span class="line">	margin-right: 5%;</span><br><span class="line">&#125;</span><br><span class="line">/*媒体查询*/</span><br><span class="line">@media only screen and (max-width: 1000px) &#123;</span><br><span class="line">	html,body&#123;</span><br><span class="line">		font-size: 52px;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">@media only screen and (min-width: 1000px) &#123;</span><br><span class="line">	html,body&#123;</span><br><span class="line">		font-size: 52px;	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">@media only screen and (min-width: 1520px) &#123;</span><br><span class="line">	html,body&#123;</span><br><span class="line">		font-size: 76px;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">@media only screen and (min-width: 1920px)&#123;</span><br><span class="line">	html,body&#123;</span><br><span class="line">		font-size: 100px;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">javascript:</span><br><span class="line">$(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	$(<span class="string">".page_content"</span>).css(<span class="string">"height"</span>,$(window).height());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><img src="/assets/blogImg/work/bg_two.png" alt="alt text" title="上述效果图展示"></p>
-<h4 id="3-定宽-媒体查询（目前，国内绝大多数内容为主的网站以及电商网站（网易考拉，京东，聚美优品）都使用了内容区定宽的布局）"><a href="#3-定宽-媒体查询（目前，国内绝大多数内容为主的网站以及电商网站（网易考拉，京东，聚美优品）都使用了内容区定宽的布局）" class="headerlink" title="3.定宽+媒体查询（目前，国内绝大多数内容为主的网站以及电商网站（网易考拉，京东，聚美优品）都使用了内容区定宽的布局）"></a>3.定宽+媒体查询（目前，国内绝大多数内容为主的网站以及电商网站（网易考拉，京东，聚美优品）都使用了内容区定宽的布局）</h4><p>参看网站<a href="https://www.tmall.com/?ali_trackid=2:mm_26632325_6860397_24008452:1525252932_314_252357982" target="_blank" rel="noopener">天猫</a>，<a href="https://www.jd.com/?cu=true&amp;utm_source=www.duba.com&amp;utm_medium=tuiguang&amp;utm_campaign=t_1000003625_jinshanmz&amp;utm_term=aab7d6a71d634fea8283b0700e18afeb" target="_blank" rel="noopener">京东</a>，<a href="http://bj.jumei.com/?referer=duba_mz&amp;utm_content=mz&amp;utm_medium=nav&amp;utm_source=duba" target="_blank" rel="noopener">聚美优品</a>，<a href="http://www.163.com/" target="_blank" rel="noopener">网易</a>等</p>
+        <h2 id="setInterval"><a href="#setInterval" class="headerlink" title="setInterval()"></a>setInterval()</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">setInterval(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	run();	</span><br><span class="line">&#125;,10000);</span><br><span class="line"></span><br><span class="line">//或者</span><br><span class="line">setInt=setInterval(run,10000);</span><br><span class="line">window.clearInterval(setInt);</span><br><span class="line">//或者</span><br><span class="line">window.clearInterval(<span class="string">"run()"</span>,5000);</span><br></pre></td></tr></table></figure>
+<p>1.如果run（）的执行时间大于10s，那么甚至可能跳过任务</p>
+<p>2.setInterval()是循环执行N次，不会自己停止</p>
+<p>3.如果setInterval()被包含在一个点击事件中，点击一次加快一次，最后飞速的变换。</p>
+<p>4.持续占有独立线程的一个定时出发函数</p>
+<p>5.需用window.clearInterval(setInt)清除已设置的setInterval对象（停止循环）</p>
+<h2 id="setTimeout"><a href="#setTimeout" class="headerlink" title="setTimeout()"></a>setTimeout()</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">run</span></span>()&#123;</span><br><span class="line">	setTimeout(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">		run();</span><br><span class="line">	&#125;,10000);</span><br><span class="line">&#125;</span><br><span class="line">run();</span><br></pre></td></tr></table></figure>
+<p>1.虽然设置的是10秒执行一次，但是实际时间间隔是”其他代码”执行时间+10s(表现上是其他代码执行时间与10s最大值)</p>
+<p>2.setTimeout()是延迟执行，只执行一次，上述代码方式是递归调用自己</p>
+<p>3.不会占有一个线程的资源，执行完当前的方法会释放当前的线程资源，等待下次触发，重新申请资源</p>
+<p>4.setTimeout时间不是标准的系统时间，有误差</p>
+<p>5.需用clearTimeout(setInt)清除已设置的setTimeout对象</p>
 
       
 
@@ -226,7 +230,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">PC端全屏页面</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">setInterval()和setTimeout本质区别</a>
         		</li>
       		
 		</ul>
@@ -282,7 +286,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/05/02/pingmushipei/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/05/03/Timer/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -296,18 +300,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/05/02/Nodejs/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Nodejs
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/04/28/JointJs/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JointJs</div>
+    <a href="/2018/05/02/Screen/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">PC端全屏页面</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -437,11 +432,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Nodejs</a>
+                <a href="javascript:void(0)" class="js-tag color3">PC端全屏页面</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">PC端全屏页面</a>
+                <a href="javascript:void(0)" class="js-tag color4">setInterval()和setTimeout本质区别</a>
               </li>
              
               <li class="article-tag-list-item">

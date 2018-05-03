@@ -151,27 +151,39 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Nodejs" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Timer" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/02/Nodejs/">Nodejs</a>
+      <a class="article-title" href="/2018/05/03/Timer/">setInterval()和setTimeout本质区别</a>
     </h1>
   
 
         
-        <a href="/2018/05/02/Nodejs/" class="archive-article-date">
-  	<time datetime="2018-05-02T09:13:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-02</time>
+        <a href="/2018/05/03/Timer/" class="archive-article-date">
+  	<time datetime="2018-05-03T02:14:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="setInterval"><a href="#setInterval" class="headerlink" title="setInterval()"></a>setInterval()</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">setInterval(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	run();	</span><br><span class="line">&#125;,10000);</span><br><span class="line"></span><br><span class="line">//或者</span><br><span class="line">setInt=setInterval(run,10000);</span><br><span class="line">window.clearInterval(setInt);</span><br><span class="line">//或者</span><br><span class="line">window.clearInterval(<span class="string">"run()"</span>,5000);</span><br></pre></td></tr></table></figure>
+<p>1.如果run（）的执行时间大于10s，那么甚至可能跳过任务</p>
+<p>2.setInterval()是循环执行N次，不会自己停止</p>
+<p>3.如果setInterval()被包含在一个点击事件中，点击一次加快一次，最后飞速的变换。</p>
+<p>4.持续占有独立线程的一个定时出发函数</p>
+<p>5.需用window.clearInterval(setInt)清除已设置的setInterval对象（停止循环）</p>
+<h2 id="setTimeout"><a href="#setTimeout" class="headerlink" title="setTimeout()"></a>setTimeout()</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">run</span></span>()&#123;</span><br><span class="line">	setTimeout(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">		run();</span><br><span class="line">	&#125;,10000);</span><br><span class="line">&#125;</span><br><span class="line">run();</span><br></pre></td></tr></table></figure>
+<p>1.虽然设置的是10秒执行一次，但是实际时间间隔是”其他代码”执行时间+10s(表现上是其他代码执行时间与10s最大值)</p>
+<p>2.setTimeout()是延迟执行，只执行一次，上述代码方式是递归调用自己</p>
+<p>3.不会占有一个线程的资源，执行完当前的方法会释放当前的线程资源，等待下次触发，重新申请资源</p>
+<p>4.setTimeout时间不是标准的系统时间，有误差</p>
+<p>5.需用clearTimeout(setInt)清除已设置的setTimeout对象</p>
+
       
 
       
@@ -184,7 +196,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Nodejs</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">setInterval()和setTimeout本质区别</a>
         		</li>
       		
 		</ul>
@@ -194,7 +206,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/02/Nodejs/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/05/03/Timer/">展开全文 >></a>
         </p>
       
 
@@ -224,19 +236,19 @@
 
 
   
-    <article id="post-pingmushipei" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Screen" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/02/pingmushipei/">PC端全屏页面</a>
+      <a class="article-title" href="/2018/05/02/Screen/">PC端全屏页面</a>
     </h1>
   
 
         
-        <a href="/2018/05/02/pingmushipei/" class="archive-article-date">
+        <a href="/2018/05/02/Screen/" class="archive-article-date">
   	<time datetime="2018-05-02T05:44:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-02</time>
 </a>
         
@@ -272,7 +284,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/02/pingmushipei/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/05/02/Screen/">展开全文 >></a>
         </p>
       
 
@@ -556,11 +568,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Nodejs</a>
+                <a href="javascript:void(0)" class="js-tag color3">PC端全屏页面</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">PC端全屏页面</a>
+                <a href="javascript:void(0)" class="js-tag color4">setInterval()和setTimeout本质区别</a>
               </li>
              
               <li class="article-tag-list-item">
