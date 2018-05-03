@@ -8,13 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>animate | 玲 Ling</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="简单过度动画定向动画1234567891011121314151617181920.div3 &amp;#123;  height: 10px;  width: 160px;  height: 160px;  background-color: blue;  -moz-animation: na 1s;  -webkit-animation: na 1s;  animation: na 1s;&amp;#125;">
+<meta property="og:type" content="article">
 <meta property="og:title" content="animate">
 <meta property="og:url" content="http://yoursite.com/2018/05/03/animate/index.html">
 <meta property="og:site_name" content="玲 Ling">
-<meta property="og:updated_time" content="2018-05-03T09:35:15.671Z">
+<meta property="og:description" content="简单过度动画定向动画1234567891011121314151617181920.div3 &amp;#123;  height: 10px;  width: 160px;  height: 160px;  background-color: blue;  -moz-animation: na 1s;  -webkit-animation: na 1s;  animation: na 1s;&amp;#125;">
+<meta property="og:updated_time" content="2018-05-03T09:58:12.698Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="animate">
+<meta name="twitter:description" content="简单过度动画定向动画1234567891011121314151617181920.div3 &amp;#123;  height: 10px;  width: 160px;  height: 160px;  background-color: blue;  -moz-animation: na 1s;  -webkit-animation: na 1s;  animation: na 1s;&amp;#125;">
   
     <link rel="alternative" href="/atom.xml" title="玲 Ling" type="application/atom+xml">
   
@@ -170,7 +173,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="简单过度动画"><a href="#简单过度动画" class="headerlink" title="简单过度动画"></a>简单过度动画</h3><h4 id="定向动画"><a href="#定向动画" class="headerlink" title="定向动画"></a>定向动画</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">.div3 &#123;</span><br><span class="line">  height: 10px;</span><br><span class="line">  width: 160px;</span><br><span class="line">  height: 160px;</span><br><span class="line">  background-color: blue;</span><br><span class="line">  -moz-animation: na 1s;</span><br><span class="line">  -webkit-animation: na 1s;</span><br><span class="line">  animation: na 1s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@keyframes na &#123;</span><br><span class="line">  from &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 200px;</span><br><span class="line">  &#125;</span><br><span class="line">  to &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="晃动动画"><a href="#晃动动画" class="headerlink" title="晃动动画"></a>晃动动画</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">.div1:hover&#123;</span><br><span class="line">				// 动画名称     执行时间   速度曲线    动画开始之前的延迟   播放次数    是否轮流反向播放动画 </span><br><span class="line">	animation:verticalShake 0.8s linear 0s 1 ;</span><br><span class="line">&#125;</span><br><span class="line">@keyframes verticalShake&#123;</span><br><span class="line">	from,50%,90%&#123;</span><br><span class="line">		transform: translate(0,0);</span><br><span class="line">	&#125;</span><br><span class="line">	35%&#123;</span><br><span class="line">		transform: translate(0,-30px);</span><br><span class="line">	&#125;</span><br><span class="line">	75%&#123;</span><br><span class="line">		transform: translate(0,-15px);</span><br><span class="line">	&#125;</span><br><span class="line">	to&#123;</span><br><span class="line">		transform: translate(0,-5px);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//兼容动画</span><br><span class="line">@-moz-keyframes </span><br><span class="line">@-webkit-keyframes</span><br><span class="line">@-o-keyframes</span><br></pre></td></tr></table></figure>
       
 
       
