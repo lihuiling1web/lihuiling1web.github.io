@@ -6,19 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>setInterval()和setTimeout本质区别 | 玲 Ling</title>
+  <title>animate | 玲 Ling</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="setInterval()123456789setInterval(function()&amp;#123;	run();	&amp;#125;,10000);//或者setInt=setInterval(run,10000);window.clearInterval(setInt);//或者window.clearInterval(&quot;run()&quot;,5000); 1.如果run（）的执行时间大于10s，那么甚至可">
-<meta name="keywords" content="setInterval()和setTimeout本质区别">
-<meta property="og:type" content="article">
-<meta property="og:title" content="setInterval()和setTimeout本质区别">
-<meta property="og:url" content="http://yoursite.com/2018/05/03/Timer/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="animate">
+<meta property="og:url" content="http://yoursite.com/2018/05/03/animate/index.html">
 <meta property="og:site_name" content="玲 Ling">
-<meta property="og:description" content="setInterval()123456789setInterval(function()&amp;#123;	run();	&amp;#125;,10000);//或者setInt=setInterval(run,10000);window.clearInterval(setInt);//或者window.clearInterval(&quot;run()&quot;,5000); 1.如果run（）的执行时间大于10s，那么甚至可">
-<meta property="og:updated_time" content="2018-05-03T06:26:21.785Z">
+<meta property="og:updated_time" content="2018-05-03T09:35:15.671Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="setInterval()和setTimeout本质区别">
-<meta name="twitter:description" content="setInterval()123456789setInterval(function()&amp;#123;	run();	&amp;#125;,10000);//或者setInt=setInterval(run,10000);window.clearInterval(setInt);//或者window.clearInterval(&quot;run()&quot;,5000); 1.如果run（）的执行时间大于10s，那么甚至可">
+<meta name="twitter:title" content="animate">
   
     <link rel="alternative" href="/atom.xml" title="玲 Ling" type="application/atom+xml">
   
@@ -154,39 +150,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Timer" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-animate" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      setInterval()和setTimeout本质区别
+      animate
     </h1>
   
 
         
-        <a href="/2018/05/03/Timer/" class="archive-article-date">
-  	<time datetime="2018-05-03T02:14:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-03</time>
+        <a href="/2018/05/03/animate/" class="archive-article-date">
+  	<time datetime="2018-05-03T09:35:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="setInterval"><a href="#setInterval" class="headerlink" title="setInterval()"></a>setInterval()</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">setInterval(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	run();	</span><br><span class="line">&#125;,10000);</span><br><span class="line"></span><br><span class="line">//或者</span><br><span class="line">setInt=setInterval(run,10000);</span><br><span class="line">window.clearInterval(setInt);</span><br><span class="line">//或者</span><br><span class="line">window.clearInterval(<span class="string">"run()"</span>,5000);</span><br></pre></td></tr></table></figure>
-<p>1.如果run（）的执行时间大于10s，那么甚至可能跳过任务</p>
-<p>2.setInterval()是循环执行N次，不会自己停止</p>
-<p>3.如果setInterval()被包含在一个点击事件中，点击一次加快一次，最后飞速的变换。</p>
-<p>4.持续占有独立线程的一个定时出发函数</p>
-<p>5.需用window.clearInterval(setInt)清除已设置的setInterval对象（停止循环）</p>
-<h2 id="setTimeout"><a href="#setTimeout" class="headerlink" title="setTimeout()"></a>setTimeout()</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">run</span></span>()&#123;</span><br><span class="line">	setTimeout(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">		run();</span><br><span class="line">	&#125;,10000);</span><br><span class="line">&#125;</span><br><span class="line">run();</span><br></pre></td></tr></table></figure>
-<p>1.虽然设置的是10秒执行一次，但是实际时间间隔是”其他代码”执行时间+10s(表现上是其他代码执行时间与10s最大值)</p>
-<p>2.setTimeout()是延迟执行，只执行一次，上述代码方式是递归调用自己</p>
-<p>3.不会占有一个线程的资源，执行完当前的方法会释放当前的线程资源，等待下次触发，重新申请资源</p>
-<p>4.setTimeout时间不是标准的系统时间，有误差</p>
-<p>5.需用clearTimeout(setInt)清除已设置的setTimeout对象</p>
-
+        
       
 
       
@@ -225,17 +209,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">setInterval()和setTimeout本质区别</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -286,7 +259,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/05/03/Timer/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/05/03/animate/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -300,18 +273,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/05/03/正则/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          正则
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/05/02/Screen/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">PC端全屏页面</div>
+    <a href="/2018/05/03/正则/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">正则</div>
       <i class="icon-circle-right"></i>
     </a>
   
