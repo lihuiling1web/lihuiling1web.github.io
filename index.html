@@ -151,6 +151,81 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-页面定时更新数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/07/页面定时更新数据/">页面定时更新数据</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/07/页面定时更新数据/" class="archive-article-date">
+  	<time datetime="2018-05-07T09:55:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"refresh"</span> content<span class="string">"5"</span>/&gt;//每隔5秒刷新一次</span><br></pre></td></tr></table></figure>
+<h3 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setInterval(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	$(<span class="string">"#id"</span>).trigger(<span class="string">"click"</span>);</span><br><span class="line">&#125;,5000);</span><br></pre></td></tr></table></figure>
+<h3 id="方法3"><a href="#方法3" class="headerlink" title="方法3"></a>方法3</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">myrefresh</span></span>()&#123;</span><br><span class="line">	window.location.reload();</span><br><span class="line">&#125;</span><br><span class="line">setTimeout(<span class="string">'myrefresh'</span>,5000);</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JQuery/JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/07/页面定时更新数据/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-AngularJS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -172,7 +247,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>学习AngularJS<a href="https://www.imooc.com/video/4285" target="_blank" rel="noopener">视屏</a>,<a href="http://www.runoob.com/angularjs/angularjs-tutorial.html" target="_blank" rel="noopener">API文档</a></p>
-<h5 id="AngularJS-使得开发现代的单一页面应用程序（SPAs：Single-Page-Applications）变得更加容易。"><a href="#AngularJS-使得开发现代的单一页面应用程序（SPAs：Single-Page-Applications）变得更加容易。" class="headerlink" title="AngularJS 使得开发现代的单一页面应用程序（SPAs：Single Page Applications）变得更加容易。"></a>AngularJS 使得开发现代的单一页面应用程序（SPAs：Single Page Applications）变得更加容易。</h5><h3 id="四大核心特性（MVC，模块化，指令系统，双向数据绑定）"><a href="#四大核心特性（MVC，模块化，指令系统，双向数据绑定）" class="headerlink" title="四大核心特性（MVC，模块化，指令系统，双向数据绑定）"></a>四大核心特性（MVC，模块化，指令系统，双向数据绑定）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-app=<span class="string">""</span>&gt;</span><br><span class="line">     &lt;p&gt;名字 : &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"name"</span>&gt;&lt;/p&gt;</span><br><span class="line">     &lt;h1&gt;Hello &#123;&#123;name&#125;&#125;&lt;/h1&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="AngularJS-使得开发现代的单一页面应用程序（SPAs：Single-Page-Applications）变得更加容易。"><a href="#AngularJS-使得开发现代的单一页面应用程序（SPAs：Single-Page-Applications）变得更加容易。" class="headerlink" title="AngularJS 使得开发现代的单一页面应用程序（SPAs：Single Page Applications）变得更加容易。"></a>AngularJS 使得开发现代的单一页面应用程序（SPAs：Single Page Applications）变得更加容易。</h5><h3 id="四大核心特性（MVC，模块化，指令系统，双向数据绑定）"><a href="#四大核心特性（MVC，模块化，指令系统，双向数据绑定）" class="headerlink" title="四大核心特性（MVC，模块化，指令系统，双向数据绑定）"></a>四大核心特性（MVC，模块化，指令系统，双向数据绑定）</h3><h4 id="1-MVC（模型，视图，控制器），好处：职责清晰，代码模块化"><a href="#1-MVC（模型，视图，控制器），好处：职责清晰，代码模块化" class="headerlink" title="1.MVC（模型，视图，控制器），好处：职责清晰，代码模块化"></a>1.MVC（模型，视图，控制器），好处：职责清晰，代码模块化</h4><h4 id="2-模块化"><a href="#2-模块化" class="headerlink" title="2.模块化"></a>2.模块化<img src="/assets/blogImg/work/Module.png" alt="alt text" title="上述效果图展示"></h4><h4 id="3-指令系统：自定义标签，ng-app等等（类似于js的标签库）"><a href="#3-指令系统：自定义标签，ng-app等等（类似于js的标签库）" class="headerlink" title="3.指令系统：自定义标签，ng-app等等（类似于js的标签库）"></a>3.指令系统：自定义标签，ng-app等等（类似于js的标签库）</h4><h4 id="4-双向数据绑定"><a href="#4-双向数据绑定" class="headerlink" title="4.双向数据绑定"></a>4.双向数据绑定<img src="/assets/blogImg/work/bind.png" alt="alt text" title="上述效果图展示"></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;div ng-app=<span class="string">""</span>&gt;</span><br><span class="line">     &lt;p&gt;名字 : &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"name"</span> placeholder=<span class="string">"Your name"</span>&gt;&lt;/p&gt;</span><br><span class="line">     &lt;h1&gt;Hello &#123;&#123;name&#125;&#125;&lt;/h1&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/assets/blogImg/work/ng.png" alt="alt text" title="上述效果图展示"></p>
+
       
 
       
@@ -943,10 +1020,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JQuery/JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">AngularJS</a>
               </li>
              
@@ -955,11 +1028,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Velocity</a>
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+                <a href="javascript:void(0)" class="js-tag color3">JQuery/JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Velocity</a>
               </li>
             
             <div class="clearfix"></div>
