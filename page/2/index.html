@@ -151,6 +151,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Screen" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/02/Screen/">PC端全屏页面</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/02/Screen/" class="archive-article-date">
+  	<time datetime="2018-05-02T05:44:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="简单页面"><a href="#简单页面" class="headerlink" title="简单页面"></a>简单页面</h3><h4 id="1-页面内容定最小显示宽度（例：1200px且浏览器都有放大功能）居中显示"><a href="#1-页面内容定最小显示宽度（例：1200px且浏览器都有放大功能）居中显示" class="headerlink" title="1. 页面内容定最小显示宽度（例：1200px且浏览器都有放大功能）居中显示"></a>1. 页面内容定最小显示宽度（例：1200px且浏览器都有放大功能）居中显示</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">html,body&#123;</span><br><span class="line">	width: 100%;</span><br><span class="line">	min-width: 1200px;</span><br><span class="line">&#125;</span><br><span class="line">.page_content&#123;/*所有内容都放这个盒子里面*/</span><br><span class="line">	width: 1200px;</span><br><span class="line">	margin: 0 auto;</span><br><span class="line">	height: 768px;</span><br><span class="line">	background: red;</span><br><span class="line">&#125;</span><br><span class="line">img&#123;</span><br><span class="line">	width：100%;</span><br><span class="line">	height：auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/assets/blogImg/work/bg_one.png" alt="alt text" title="上述效果图展示"></p>
+<h4 id="2-页面全屏显示，所有内容宽度用百分比-高度rem-媒体查询"><a href="#2-页面全屏显示，所有内容宽度用百分比-高度rem-媒体查询" class="headerlink" title="2. 页面全屏显示，所有内容宽度用百分比+高度rem+媒体查询"></a>2. 页面全屏显示，所有内容宽度用百分比+高度rem+媒体查询</h4><h4 id="（因为pc绝大部分都是宽屏设备，而且他们的比例是不一致的，所以暂时不能适配所有PC终端，尝试通过js判断最小高度临界值，再加上这个最小临界值的class）"><a href="#（因为pc绝大部分都是宽屏设备，而且他们的比例是不一致的，所以暂时不能适配所有PC终端，尝试通过js判断最小高度临界值，再加上这个最小临界值的class）" class="headerlink" title="（因为pc绝大部分都是宽屏设备，而且他们的比例是不一致的，所以暂时不能适配所有PC终端，尝试通过js判断最小高度临界值，再加上这个最小临界值的class）"></a>（因为pc绝大部分都是宽屏设备，而且他们的比例是不一致的，所以暂时不能适配所有PC终端，尝试通过js判断最小高度临界值，再加上这个最小临界值的class）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">html,body&#123;</span><br><span class="line">	width: 100%;</span><br><span class="line">	min-width: 1200px;</span><br><span class="line">	overflow-x: hidden;</span><br><span class="line">&#125;</span><br><span class="line">.page_content&#123;/*所有内容都放这个盒子里面*/</span><br><span class="line">	width: 100%;</span><br><span class="line">	margin: 0 auto;</span><br><span class="line">	background: black;</span><br><span class="line">	height:19.2rem;</span><br><span class="line">	overflow: hidden;</span><br><span class="line">&#125;</span><br><span class="line">.page_top&#123;</span><br><span class="line">	width: 90%;</span><br><span class="line">	margin: 5% auto;</span><br><span class="line">	height: 25%;</span><br><span class="line">	background: yellow;</span><br><span class="line">&#125;</span><br><span class="line">.page_left&#123;</span><br><span class="line">	<span class="built_in">float</span>: left;</span><br><span class="line">	width:25%;</span><br><span class="line">	background: red;</span><br><span class="line">	height:30%;</span><br><span class="line">	margin-left: 5%;</span><br><span class="line">&#125;</span><br><span class="line">.page_right&#123;</span><br><span class="line">	<span class="built_in">float</span>: right;</span><br><span class="line">	width: 60%;</span><br><span class="line">	background:blue ;</span><br><span class="line">	height:30%;</span><br><span class="line">	margin-right: 5%;</span><br><span class="line">&#125;</span><br><span class="line">/*媒体查询*/</span><br><span class="line">@media only screen and (max-width: 1000px) &#123;</span><br><span class="line">	html,body&#123;</span><br><span class="line">		font-size: 52px;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">@media only screen and (min-width: 1000px) &#123;</span><br><span class="line">	html,body&#123;</span><br><span class="line">		font-size: 52px;	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">@media only screen and (min-width: 1520px) &#123;</span><br><span class="line">	html,body&#123;</span><br><span class="line">		font-size: 76px;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">@media only screen and (min-width: 1920px)&#123;</span><br><span class="line">	html,body&#123;</span><br><span class="line">		font-size: 100px;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">javascript:</span><br><span class="line">$(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	$(<span class="string">".page_content"</span>).css(<span class="string">"height"</span>,$(window).height());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><img src="/assets/blogImg/work/bg_two.png" alt="alt text" title="上述效果图展示"></p>
+<h4 id="3-定宽-媒体查询（目前，国内绝大多数内容为主的网站以及电商网站（网易考拉，京东，聚美优品）都使用了内容区定宽的布局）"><a href="#3-定宽-媒体查询（目前，国内绝大多数内容为主的网站以及电商网站（网易考拉，京东，聚美优品）都使用了内容区定宽的布局）" class="headerlink" title="3.定宽+媒体查询（目前，国内绝大多数内容为主的网站以及电商网站（网易考拉，京东，聚美优品）都使用了内容区定宽的布局）"></a>3.定宽+媒体查询（目前，国内绝大多数内容为主的网站以及电商网站（网易考拉，京东，聚美优品）都使用了内容区定宽的布局）</h4><p>参看网站<a href="https://www.tmall.com/?ali_trackid=2:mm_26632325_6860397_24008452:1525252932_314_252357982" target="_blank" rel="noopener">天猫</a>，<a href="https://www.jd.com/?cu=true&amp;utm_source=www.duba.com&amp;utm_medium=tuiguang&amp;utm_campaign=t_1000003625_jinshanmz&amp;utm_term=aab7d6a71d634fea8283b0700e18afeb" target="_blank" rel="noopener">京东</a>，<a href="http://bj.jumei.com/?referer=duba_mz&amp;utm_content=mz&amp;utm_medium=nav&amp;utm_source=duba" target="_blank" rel="noopener">聚美优品</a>，<a href="http://www.163.com/" target="_blank" rel="noopener">网易</a>等</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JQuery/JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/02/Screen/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JointJs" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -268,7 +346,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Velocity</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">模板引擎</a>
         		</li>
       		
 		</ul>
@@ -413,11 +491,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Velocity</a>
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -425,11 +503,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+                <a href="javascript:void(0)" class="js-tag color5">模板引擎</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
             
             <div class="clearfix"></div>
